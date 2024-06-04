@@ -11,6 +11,7 @@ namespace WindMillApp
         private int speed = 5; // Начальная скорость теперь берется из начального значения trackBar1
         private Timer timer1;
         private float currentAngle = 0;
+        private WindmillBladeChanger bladeChanger;
 
         public Form1()
         {
@@ -22,8 +23,10 @@ namespace WindMillApp
         {
             try
             {
+                bladeChanger = new WindmillBladeChanger();
+
                 pictureBoxMill.Image = Properties.Resources.WindMillWithoutBlades;
-                pictureBoxBlades.Image = Properties.Resources.WindmillBlades;
+                pictureBoxBlades.Image = bladeChanger.GetBladeImage((int)numericUpDown1.Value);
                 pictureBoxMill.BackColor = pictureBoxBlades.BackColor = Color.Transparent;
                 pictureBoxMill.SizeMode = pictureBoxBlades.SizeMode = PictureBoxSizeMode.Zoom;
                 pictureBoxBlades.Parent = pictureBoxMill;
@@ -35,6 +38,11 @@ namespace WindMillApp
                 trackBar1.Value = 10;
                 trackBar1.TickFrequency = 1;
                 trackBar1.ValueChanged += TrackBar1_ValueChanged; // Подписка на событие изменения значения
+
+                // Настройка NumericUpDown
+                numericUpDown1.Minimum = 2;
+                numericUpDown1.Maximum = 6;
+                numericUpDown1.ValueChanged += NumericUpDown1_ValueChanged;
 
                 // Настройка таймера
                 timer1 = new Timer { Interval = 100 };
@@ -54,6 +62,12 @@ namespace WindMillApp
             speed = trackBar1.Value; // Обновление скорости в соответствии с положением ползунка
         }
 
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            int bladeNumber = (int)numericUpDown1.Value;
+            pictureBoxBlades.Image = bladeChanger.GetBladeImage(bladeNumber);
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             isRunning = !isRunning;
@@ -69,7 +83,7 @@ namespace WindMillApp
         private void timer1_Tick(object sender, EventArgs e)
         {
             currentAngle += (direction ? speed : -speed);
-            pictureBoxBlades.Image = RotateImage(Properties.Resources.WindmillBlades, currentAngle);
+            pictureBoxBlades.Image = RotateImage(bladeChanger.GetBladeImage((int)numericUpDown1.Value), currentAngle);
         }
 
         private Bitmap RotateImage(Image image, float angle)

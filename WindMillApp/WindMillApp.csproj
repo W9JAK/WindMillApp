@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,10 +82,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WindmillBlades.png" />
+    <None Include="Resources\WindmillBlades4.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WindMillWithoutBlades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindmillBlades3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindmillBlades6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindmillBlades2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindmillBlades5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

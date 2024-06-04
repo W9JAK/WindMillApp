@@ -63,9 +63,49 @@ namespace WindMillApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WindmillBlades {
+        internal static System.Drawing.Bitmap WindmillBlades2 {
             get {
-                object obj = ResourceManager.GetObject("WindmillBlades", resourceCulture);
+                object obj = ResourceManager.GetObject("WindmillBlades2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WindmillBlades3 {
+            get {
+                object obj = ResourceManager.GetObject("WindmillBlades3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WindmillBlades4 {
+            get {
+                object obj = ResourceManager.GetObject("WindmillBlades4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WindmillBlades5 {
+            get {
+                object obj = ResourceManager.GetObject("WindmillBlades5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WindmillBlades6 {
+            get {
+                object obj = ResourceManager.GetObject("WindmillBlades6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
